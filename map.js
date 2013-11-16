@@ -42,7 +42,10 @@ if (typeof window.jQuery != "undefined") {
 function addWaypoint(e) {
   var position = {latLng: { lat: e.latlng.lat, lng: e.latlng.lng}};
   mapping.waypoints.push(position);
-  if (mapping.waypoints.length > 1) {
+  if (mapping.waypoints.length == 1) {
+    mapping.startMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+  }
+  else if (mapping.waypoints.length > 1) {
     if (mapping.waypoints.length > 2) jQuery(mapping.removeDirections);
     jQuery(mapping.addDirections);
   }
