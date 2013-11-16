@@ -43,7 +43,7 @@ function addWaypoint(e) {
   var position = {latLng: { lat: e.latlng.lat, lng: e.latlng.lng}};
   mapping.waypoints.push(position);
   if (mapping.waypoints.length > 1) {
-    jQuery(mapping.addDirections);
     if (mapping.waypoints.length > 2) jQuery(mapping.removeDirections);
+    jQuery(mapping.addDirections);
   }
 }
