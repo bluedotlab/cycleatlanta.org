@@ -3,7 +3,7 @@ mapping = {
   routeLayer: {},
 
   initialize: function() {
-    map = L.map('map').setView([33.754269, -84.387493], 13);
+    map = L.map('mapBody').setView([33.754269, -84.387493], 13);
     var apiKey = 'd9c90387c1314bc49a6922344ab43bc1';
     L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OSM Cycle Map</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
