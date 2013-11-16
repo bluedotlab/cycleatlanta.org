@@ -5,21 +5,21 @@ mapping = {
   initialize: function() {
     map = L.map('map').setView([33.754269, -84.387493], 13);
     var apiKey = 'd9c90387c1314bc49a6922344ab43bc1';
-    L.tileLayer('http://{s}.tile.cloudmade.com/'+apiKey+'/997/256/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OSM Cycle Map</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
       maxZoom: 18
     }).addTo(map);
-console.log(map);
   },
 
   click: function() {
     map.on('click', addWaypoint);
   },
 
-  addDirections: function() {
+  updateDirections: function() {
     dir = MQ.routing.directions();
     dir.route({
-        locations: mapping.waypoints
+        locations: mapping.waypoints,
+        options: {},
     }); 
     mapping.routeLayer = MQ.routing.routeLayer({
         directions: dir,
@@ -47,6 +47,6 @@ function addWaypoint(e) {
   }
   else if (mapping.waypoints.length > 1) {
     if (mapping.waypoints.length > 2) jQuery(mapping.removeDirections);
-    jQuery(mapping.addDirections);
+    jQuery(mapping.updateDirections);
   }
 }
