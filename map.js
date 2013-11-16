@@ -11,7 +11,22 @@ map = {
       map.setZoom(13);
     });
   },
+
+  addDirections: function() {
+    dir = MQ.routing.directions();
+    dir.route({
+        locations: [
+            '1137 morley avenue, atlanta ga',
+            'anatolia cafe, atlanta ga',
+        ]
+    }); 
+    map.addLayer(MQ.routing.routeLayer({
+        directions: dir,
+        fitBounds: true
+    }));
+  }
 }
 if (typeof window.jQuery != "undefined") {
   jQuery(map.initialize);
+  jQuery(map.addDirections);
 }
