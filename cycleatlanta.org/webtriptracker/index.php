@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="http://govathon.cycleatlanta.org/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
         <link rel="stylesheet" href="http://govathon.cycleatlanta.org/css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -24,6 +23,7 @@
         <script src="http://beta.mapquestapi.com/sdk/leaflet/v0.1/mq-map.js?key=Fmjtd%7Cluubn9u8ll%2C8g%3Do5-902l0y"></script>
         <script src="http://beta.mapquestapi.com/sdk/leaflet/v0.1/mq-routing.js?key=Fmjtd%7Cluubn9u8ll%2C8g%3Do5-902l0y"></script>
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="js/jquery.popupoverlay.js"></script>
         <script type="text/javascript" src="js/map.js"></script>
         <script type="text/javascript">	
 		  var _gaq = _gaq || [];
@@ -145,9 +145,7 @@
            
             <p class="bottom">This website brought to you by researchers from the <a href="http://participatorypublicslab.net"> Participatory Publics Lab</a> at <a href="http://gatech.edu">Georgia Tech</a>.</p>
             <div id="debug"></div>
-		</div> <!-- /container -->
-		
-<script src="jquery.popupoverlay.js"></script>
+		</div> <!-- /container -->		
 
 <!-- jquery popup thingie-->
   <!-- Add content to modal -->
@@ -168,24 +166,6 @@ Thanks for using Cycle Atlanta!</p>
       $('#my_modal').popup();
     });
   </script>
-		
 
-		<script>/*
-			$(function() {
-				$( "#slider" ).slider({
-	                animate: true,
-	                orientation: "vertical",
-	                min: 0,
-	                max: 1,
-	                value: 1,
-	                step: .05,
-	                slide: function (event, ui) {
-                    	tileOpacity(ui.value);
-                    }	                
-                });
-			});*/
-		</script>
-  
-       
     </body>
 </html>
