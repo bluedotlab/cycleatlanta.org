@@ -152,7 +152,7 @@
   <div id="my_modal">
    <br><br><br><p style="color:#ffffff; font-size:20px; text-align: center; font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click points on the map to record your ride. You can click on&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> a marker and drag it around to adjust your route. Add some<br> details about your trip and please share a little bit about<br>your bike habits, which can help other cyclists like you. <br><br>
 
-<img src="instruct1.png"><img src="instruct2.png"><img src="instruct3.png"> <br><br>
+<img src="img/instruct1.png"><img src="img/instruct2.png"><img src="img/instruct3.png"> <br><br>
 
 Thanks for using Cycle Atlanta!</p>
 <br><br><br>
