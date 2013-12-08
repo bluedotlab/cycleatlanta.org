@@ -33,10 +33,27 @@ mapping = {
       map.removeLayer(mapping.routeLayer._layers[layerid]);
     }
   },
+
+  submit: function() {
+    $('form#webtrip').submit(function(e){
+      // No route selected
+      if (jQuery.isEmptyObject(mapping.routeLayer)) {
+        alert ('You haven\'t selected a route!');
+        e.preventDefault();
+      }
+      // Route exists
+      else {
+        var shape = mapping.routeLayer.ribbon.shapeResponse.shapePoints;
+        console.log(shape);
+        e.preventDefault();
+      }
+    });
+  }
 }
 if (typeof window.jQuery != "undefined") {
   jQuery(mapping.initialize);
   jQuery(mapping.click);
+  jQuery(mapping.submit);
 }
 
 function addWaypoint(e) {
