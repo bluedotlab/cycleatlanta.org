@@ -35,7 +35,8 @@ mapping = {
   },
 
   submit: function() {
-    $('form#webtrip').submit(function(e){
+    var form = $('form#webtrip');
+    $(form).submit(function(e){
       // No route selected
       if (jQuery.isEmptyObject(mapping.routeLayer)) {
         alert ('You haven\'t selected a route!');
@@ -43,8 +44,18 @@ mapping = {
       }
       // Route exists
       else {
+        var data = new Array();
+        data['purpose'] = $(form).find('select#purpose :selected').text();
+        data['user'] = '';
+        data['coords'] = new Array();
         var shape = mapping.routeLayer.ribbon.shapeResponse.shapePoints;
-        console.log(shape);
+        for (var index in shape) {
+          var point = new Array();
+          point['l'] = shape[index].lat;
+          point['n'] = shape[index].lon;
+          data['coords'].push(point);
+        }
+        console.log(data);
         e.preventDefault();
       }
     });
